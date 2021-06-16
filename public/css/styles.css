@@ -1,0 +1,503 @@
+	
+.noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently
+		supported by Chrome, Edge, Opera and Firefox */
+	
+		
+	
+}
+
+
+/* The following prevents chrome from putting a box around an object after selecting it.
+*:focus {
+    outline: 0;
+}
+*/
+
+ * {
+  box-sizing: border-box;
+}
+
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  background-color: #9933cc;
+  color: #ffffff;
+  padding: 15px;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+}
+
+
+
+.TextCenter {
+  text-align: center;
+}
+
+
+/******** Default Button style ******/	
+button { 
+
+/*max-width: 20%; */
+min-width: 60px;
+width: auto;
+height: 50px; 
+font-family: Arial, Helvetica, sans-serif;
+font-size: 18px;
+color: black;
+background-color: #eeeeeeee;
+margin: 10px;
+border-radius: 15px;
+box-shadow: inset 2px 2px 10px 2px #999999;
+text-shadow: 1px 1px 0px grey;
+text-align: center;
+padding: 5px;  /* iOS text is not centered unless you set padding to zero */
+
+
+/* display: inline-block; */
+border: 1px solid black;
+cursor: pointer; /*changes cursor to hand symbol when you hoover*/
+
+-webkit-tap-highlight-color: transparent; /* for removing the highlight 
+		*This only works with certain web browser but useful for Safari and 
+		* chrome on mobile touch screens*/
+	
+} 
+
+/*
+button:hover {
+	color: red;
+	background-color: #ffffff;
+}
+*/   
+button:active {
+  color: red;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: inset 2px 2px 10px 2px #999999;
+  text-shadow: 1px 1px 0px grey;
+  border: 1px solid red;
+}
+
+/* The following prevents chrome from putting a box around the button
+ * after selecting it 
+ */
+button:focus {
+    outline: 0;
+}
+
+
+
+/* Style the active class, and buttons on mouse-over */
+.active {
+  background-color: #fff;
+  color: red;
+}
+
+
+/***** TOGGLE switch *******************/
+
+.switch {  /* The sets how the switch background looks when in the inactive state */
+  margin: 10px;
+  padding: 5px;  /* iOS text is not centered unless you set padding to zero */
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  position: relative;
+  cursor: pointer;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  border: 1px; /* none removed the border from objectes */
+  border-radius: 34px;
+  background-color: #CCC;
+  border: 1px solid black;
+  box-shadow: none; /*This make the button look 2D */
+  -webkit-transition: .4s; /* this sets how fast the keyhole changes color*/
+  transition: .4s;
+}
+
+/* This put the little white circle switch shaft and sets the offet from the center */
+/* The :before attribute mean to insert some content before the contains of the original object*/
+.switch:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  -webkit-transition: .4s; /* this sets how fast the keyhole changes color*/
+  transition: .4s;
+}
+
+
+.switch.active {  /* The sets how the switch background looks when Javascript forces it to the active state */
+  margin: 10px;
+  padding: 5px;  /* iOS text is not centered unless you set padding to zero */
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  position: relative;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: none; /* This removed the border from objectes */
+  border-radius: 34px;
+  background-color: #2196F3;
+  border: 1px solid black;
+  box-shadow: none; /*This make the button look 2D */
+  -webkit-transition: .4s; /* this sets how fast the keyhole changes color*/
+  transition: .4s;
+}
+
+
+/*This sets how far the little white circle moves to the right when javascript makes it active*/
+.switch.active:before {	
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: .4s; /* this sets how fast the keyhole changes color*/
+  transition: .4s;
+  border-radius: 50%;
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.switch:active { /* This sets how the background of the switch looks when pressed by a touch/mouse device*/
+	background-color: #999;
+	border-radius: 34px;
+	border: 1px solid black;
+}
+
+.switch.active:active { /* This sets how the background of the switch looks when pressed by a touch/mouse device while switch is in the active state*/
+	background-color: blue;
+	border-radius: 34px;
+	border: 1px solid black;
+}
+
+
+	
+
+/************* btn feedback type button **************************/
+
+.btn { 
+  /*max-width: 20%; */
+  min-width: 60px;
+  width: auto;
+  height: 50px; 
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  color: black;
+  background-color: #eeeeeeee;
+  margin: 10px;
+  border-radius: 15px;
+  box-shadow: inset 2px 2px 10px 2px #999999;
+  text-shadow: 1px 1px 0px grey;
+  text-align: center;
+  padding: 5px;  /* iOS text is not centered unless you set padding to zero */
+
+
+  /* display: inline-block; */
+  border: 1px solid black;
+  cursor: pointer; /*changes cursor to hand symbol when you hoover*/
+
+  -webkit-tap-highlight-color: transparent; /* for removing the highlight 
+		  *This only works with certain web browser but useful for Safari and 
+		  * chrome on mobile touch screens*/
+	  
+} 
+
+/*
+.btn.hover {
+  color: red;
+  background-color: #ffffff;
+}
+*/  
+
+/* This allows Javascript/WebServer to control the button feedback*/ 
+.btn.active {
+  color: red;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: inset 2px 2px 10px 2px #999999;
+  text-shadow: 1px 1px 0px grey;
+  border: 1px solid red;
+}
+
+/************* SourceSelect type button **************************/
+
+.btn_source { 
+  /*max-width: 20%; */
+  color: black;
+  background-color: #eeeeeeee;
+  border-radius: 0px;
+  box-shadow: none;
+  /*text-shadow: 2px 2px 2px grey;*/
+  text-align: center;
+  padding: 5px;  /* iOS text is not centered unless you set padding to zero */
+
+
+  /* display: inline-block; */
+  border: 1px solid black;
+  cursor: pointer; /*changes cursor to hand symbol when you hoover*/
+
+  -webkit-tap-highlight-color: transparent; /* for removing the highlight 
+		  *This only works with certain web browser but useful for Safari and 
+		  * chrome on mobile touch screens*/
+	  
+} 
+
+
+/* This allows Javascript/WebServer to control the button feedback*/
+.btn_source.active { 
+  background-color: orange;
+  color: black;
+  border: 1px solid black;
+  border-radius: 0px;
+  box-shadow: none; /*This make the button look 2D */
+}
+
+/* This overrides the default look of the button when pressed on a touch device*/
+.btn_source:active { 
+  background-color: orange;
+  color: black;
+  border: 1px solid black;
+  border-radius: 0px;
+  box-shadow: none; /*This make the button look 2D */
+}
+
+
+/****** Volume Slider style *************/
+
+
+.range-slider{
+  -webkit-appearance: none;  /* Override default CSS styles */
+  -webkit-tap-highlight-color: transparent; /* for removing the highlight 
+      *This only works with certain web browser but useful for Safari and 
+      * chrome on mobile touch screens*/
+      
+  -webkit-transform:rotate(270deg);  
+  margin: 20px;
+  appearance: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: #ccc;
+  
+  width: 250px; /* Full-width */
+  height: 25px; /* Specified height */
+  margin-left: -108px;
+  margin-right: 0px;
+  margin-top: 120px;
+  border-left: 0px;
+  border: 1px solid black;
+  cursor: pointer; /* Cursor on hover */
+}
+
+.range-slide::-webkit-slider-runnable-track{
+	background-color: white;	
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  background: #fafafa;
+  appearance: none;
+  /*box-shadow: 1px 2px 26px 1px #bdbdbd;*/
+  width: 25px;
+  height: 25px;
+  /*border-radius: 5px;*/
+  background: #4CAF50; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+/* The slider handle  -moz- (Firefox) to override default look) */
+.range-slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #4CAF50; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+/* Mouse-over effects */
+.range-slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+
+/********************* CONTAINERS**************************************/
+		
+.keypadContainer {
+  /*background-color: red;*/
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 10px;
+  border: 1px solid black;
+  border-radius: 15px;
+
+  float: left;
+  width: auto;
+  min-width:350px;
+  padding: 5px 5px 5px 5px;  /* top, right, bottom, left */
+  box-sizing: border-box;
+}
+
+.sourceContainer {
+  display: inline-block;
+  /*background-color: red;*/
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 10px;
+  border: 1px solid black;
+  border-radius: 15px;
+  float: left;
+  clear: both; /* The forces the div to position below the previous div*/
+  width: auto;
+  min-width:330px;
+  padding: 5px 5px 5px 5px;  /* top, right, bottom, left */
+  box-sizing: border-box;
+}
+
+		
+.consoleContainer {
+  /*background-color: red;*/
+  font-family: monospace;
+  display: inline-block;
+  margin-left: 5px;
+  margin-top: 10px;
+  border: 1px solid black;
+  border-radius: 15px;
+  float: left;
+  clear: both; /* The forces the div to position below the previous div*/
+  width: auto;
+  min-width: 330px;
+  /*resize: none; /* Remove this if you want the user to resize the textarea */
+  padding: 0 10px;
+  
+}
+
+.passwordContainer {
+  /*background-color: red;*/
+  font-family: monospace;
+  display: inline-block;
+  margin-left: 5px;
+  margin-top: 10px;
+  border: 1px solid black;
+  border-radius: 15px;
+  float: left;
+  clear: both; /* The forces the div to position below the previous div*/
+  width: auto;
+  min-width: 330px;
+  /*resize: none; /* Remove this if you want the user to resize the textarea */
+  padding: 0 10px;
+  
+}
+
+.GpioContainer {
+  background-color: white;
+  text-align: center;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 15px;
+  float: left;
+  width: auto;
+  min-width: 50px;
+  
+  box-sizing: border-box;
+}
+
+/*
+@media(max-width:600px){
+   .keypadContainer{
+	width:100%;
+	float:none;
+    }
+}
+*/
+
+.volumeButtonContainer {
+   margin-left: 10px;
+   margin-top: 10px;
+   background-color: white;
+   border: 1px solid green;
+   border-radius: 15px;
+   float: right;
+   width: 130px;
+   padding: 0 10px;
+   box-sizing: border-box;
+}
+
+.volumeSliderBox {
+   margin-left: 10px;
+   margin-top: 1px;
+   /*background-color: orange;*/
+   /*border: 1px solid brown;*/
+   /*border-radius: 15px;*/
+   float: left;
+   width: 35px;
+   height: 270px; 
+   padding: 0px 0px;
+   box-sizing: border-box;
+}
+
+
+.volumeBox {
+   margin-left: 10px;
+   margin-top: 10px;
+   /*background-color: white;*/
+   border: 1px solid blue;
+   border-radius: 15px;
+   float: left;
+   width: 165px;
+   height: 280px;
+   padding: 0px 0px;
+   box-sizing: border-box;
+}
+
+.volumebuttonbox {
+   margin-left: 10px;
+   margin-top: 1px;
+   /*background-color: white;*/
+   /*border: 1px solid red;*/
+   border-radius: 15px;
+   float: left;
+   width: 100px;
+   height: 270px;
+   padding: 0px 0px;
+   box-sizing: border-box;
+}
+
+.serialtext {
+/* no special properties.  Used for javascript comparison */
+}
+

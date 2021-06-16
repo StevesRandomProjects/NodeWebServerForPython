@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Steve's Projects">
+    <title>FrontEndWebServer</title>
+    <link rel="icon" type="image/png" href="../images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+   </head>
+
+<body oncopy="return false" oncut="return false" onpaste="return false">
+
+
+<div class="noselect" >
+
+  <div class="keypadContainer">
+    <h1 class="TextCenter">Control GPIO</h1>
+
+    <div class="GpioContainer">
+      <strong>GPIO26</strong>
+      <br>
+      <button class="switch inactive" id="GPIO26T"></button>
+      <br>
+      <button class="btn inactive"  id="GPIO26M"></button>
+      <br>
+    </div>
+
+    <div class="GpioContainer">
+      <strong>GPIO20</strong>
+      <br>
+      <button class="switch inactive" id="GPIO20T"></button>
+      <br>
+      <button class="btn inactive"  id="GPIO20M"></button>
+      <br>
+    </div>
+
+    <div class="GpioContainer">
+      <strong>GPIO21</strong>
+      <br>
+      <button class="switch inactive" id="GPIO21T"></button>
+      <br>
+      <button class="btn inactive"  id="GPIO21M"></button>
+      <br>
+    </div>
+
+    <div class="GpioContainer">
+      <strong>GPIO16</strong>
+      <br>
+      <button class="switch inactive" id="GPIO16T"></button>
+      <br>
+      <button class="btn inactive"  id="GPIO16M"></button>
+      <br>
+    </div>
+  </div>
+
+  <div class="keypadContainer">
+    <p class="SetFont" button type="button" id="DebugData">Data sent to Server reported here</p>
+    <br>
+    <button id="D1">1</button>
+    <button id="D2">2</button>
+    <button id="D3">3</button>
+    <br>
+    <button id="D4">4</button>
+    <button id="D5">5</button>
+    <button id="D6">6</button>
+    <br>
+    <button id="D7">7</button>
+    <button id="D8">8</button>
+    <button id="D9">9</button>
+    <br>
+    <button id="D11">CL</button>
+    <button id="D10">0</button>
+    <button id="D12">EN</button>
+  </div>
+	
+  <div class="volumeBox">
+    <div class="volumeSliderBox">
+      <input class="range-slider" id="A1" type="range" min="1" max="100" value="0"  oninput="valueChanged(this)">
+    </div>
+    <div class="volumebuttonbox">
+    <br>
+    <div>Volume:<span id="volume"></span></div>
+      <br>
+      <button id="D13">vol+</button>
+
+      <button id="D14">vol-</button>
+      <br>
+      <button class="btn inactive" id="D15">mute</button>
+    </div>
+  </div> 
+</div>
+
+<div class="noselect">
+
+  <div class="sourceContainer">
+    <h1 class="TextCenter">Select Video Input</h1>
+    <br>
+    <button class="btn_source inactive" id="D30">Off</button>
+    <button class="btn_source inactive" id="D31">1</button>
+    <button class="btn_source inactive" id="D32">2</button>
+    <button class="btn_source inactive" id="D33">3</button>
+    <button class="btn_source inactive" id="D34">4</button>
+  </div>
+</div>
+
+<div>   
+  <div class="consoleContainer">
+    <div>
+      <p>Send a message to the chat window</p>
+      <div>Enter your message here</div>
+      <textarea class="serialtext" name="test" id="S2" rows="1" cols="40" wrap="off" onkeypress="onTextAreaChange('S2');"></textarea>
+      <br>
+      <textarea class="serialtext" id="S3" rows="10" cols="40" readonly wrap="off"></textarea>
+      <br>
+      <button onclick="ClearText()">Clear</button>
+    </div>
+  </div>
+</div>
+    
+	    
+  <!-- include socket.io client side script -->
+  <script src="/socket.io/socket.io.js"></script>
+
+  <script src="index.js"></script>
+
+</body>
+</html> 
+
