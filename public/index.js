@@ -36,43 +36,40 @@ function ReportOnMouseDown(e) {
 }
 
 function ReportOnMouseUp(e) {
-  socket.emit('msg',e.target.id, 0);
   socket.emit('msg','{"'+e.target.id+'":0}');
   document.getElementById("DebugData").innerHTML = '{"'+e+'":0}';
 }
 
 function ReportTouchStart(e) {
-  e.preventDefault();  // Call preventDefault() to prevent sending auto generated mouse event
-  if (e.target.className === 'range-slider') {
-    console.log("volume class detected")
-  } else {
-    socket.emit('msg','{"'+e.target.id+'":1}');
-    document.getElementById("DebugData").innerHTML = '{"'+e.target.id+'":1}';
-  }
+	if (e.target.className != "serialtext") { // prevents e.preventDefault so keyboard will pop up
+		e.preventDefault();   // Call preventDefault() to prevent sending auto generated mouse event
+	}
+	if (e.target.className != 'range-slider') { // don't report button presses on slider
+		socket.emit('msg','{"'+e.target.id+'":1}');
+		document.getElementById("DebugData").innerHTML = '{"'+e.target.id+'":1}';
+	}
 }
 
 function ReportTouchEnd(e) {
-  if (className=="serialtext") { // prevents e.preventDefault so keyboard will pop up
-  } else {
-    e.preventDefault();   // Call preventDefault() to prevent sending auto generated mouse event
-  }
-  if (e.target.className === 'range-slider') {
-      console.log("volume class detected");
-  } else {
-    socket.emit('msg','{"'+e.target.id+'":0}');	
-    document.getElementById("DebugData").innerHTML = '{"'+e.target.id+'":0}';
-  }
+	if (e.target.className != "serialtext") { // prevents e.preventDefault so keyboard will pop up
+		e.preventDefault();   // Call preventDefault() to prevent sending auto generated mouse event
+	}
+	if (e.target.className != 'range-slider') {  // don't report button presses on slider
+		socket.emit('msg','{"'+e.target.id+'":0}');	
+		document.getElementById("DebugData").innerHTML = '{"'+e.target.id+'":0}';
+	}
+	
 }
 
 function ReportTouchMove(e) {
-  //e.preventDefault(); // Call preventDefault() to prevent sending auto generated mouse event
-  socket.emit('TouchMove',e.offsetX,e.offsetY);
+	if (e.target.className != "serialtext") { // prevents e.preventDefault so keyboard will pop up
+		e.preventDefault();   // Call preventDefault() to prevent sending auto generated mouse event
+	}
+	socket.emit('TouchMove',e.offsetX,e.offsetY);
 }
 
 function ReportMouseDown(e) {
-  if (e.target.className === 'range-slider') {
-    console.log("volume class detected");
-  } else {
+  if (e.target.className != 'range-slider') {
     socket.emit('msg','{"'+e.target.id+'":1}');
     document.getElementById("DebugData").innerHTML = '{"'+e.target.id+'":1}';
   }

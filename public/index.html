@@ -53,6 +53,11 @@
       <br>
     </div>
   </div>
+  
+  <div class="keypadContainer">
+	  <iframe width="320" height="240" src="http://192.168.18.37/picture/1/frame/" frameborder="0" allowfullscreen></iframe>
+  </div>
+   
 
   <div class="keypadContainer">
     <p class="SetFont" button type="button" id="DebugData">Data sent to Server reported here</p>
@@ -113,10 +118,12 @@
       <br>
       <textarea class="serialtext" id="S3" rows="10" cols="40" readonly wrap="off"></textarea>
       <br>
-      <button onclick="ClearText()">Clear</button>
+      <button class="serialtext" onclick="ClearText()">Clear</button>
     </div>
   </div>
 </div>
+
+
     
 	    
   <!-- include socket.io client side script -->

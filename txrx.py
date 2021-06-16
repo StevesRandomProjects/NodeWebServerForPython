@@ -62,6 +62,7 @@ def two():
      while True:
           data, addr = sockRX.recvfrom(1024) # buffer size is 1024 bytes
           JsonStr = data.decode('utf_8')
+          print(JsonStr)
           if (JsonStr.find('{"NewClient":1}') != -1):
                newclient()     
           elif (JsonStr.find('{"GPIO26T":1}') != -1):
@@ -79,7 +80,6 @@ def two():
                   GPIO.output(20,GPIO.HIGH)  
                   sockTX.sendto(bytes('{"GPIO20T":1}', "utf-8"), (UDP_TX_IP, UDP_TX_PORT))
           elif (JsonStr.find('{"GPIO21T":1}') != -1):
-               #state = GPIO.input(21)
                if GPIO.input(21):
                   GPIO.output(21,GPIO.LOW)
                   sockTX.sendto(bytes('{"GPIO21T":0}', "utf-8"), (UDP_TX_IP, UDP_TX_PORT))
@@ -117,8 +117,7 @@ def two():
           elif (JsonStr.find('{"GPIO16M":0}') != -1):
                   sockTX.sendto(bytes('{"GPIO16T":0}', "utf-8"), (UDP_TX_IP, UDP_TX_PORT))
                   GPIO.output(16,GPIO.LOW)  
-          else: print(JsonStr) # This button current does not have any logic.
-                  
+
 newclient()
 p1 = Thread(target = one)
 p2 = Thread(target = two)
@@ -127,11 +126,7 @@ p1.start()
 p2.start()
 
 
-            
-
-#check(string, "GPIO")
-
-#If you leave leave the code out, Ctrl-C to terminate the program may not work.
+#If you leave leave following the code out, Ctrl-C to terminate the program may not work.
 while True:  
      # Run your main code here.  
      sleep(10)
